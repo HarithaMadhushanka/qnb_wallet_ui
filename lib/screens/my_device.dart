@@ -18,11 +18,33 @@ class _MyDeviceState extends State<MyDevice> {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          Container(
-            height: MediaQuery.of(context).size.height * 0.28,
-            child: Image(
-              image: AssetImage('images/device_img.png'),
-            ),
+          Stack(
+            children: <Widget>[
+              Container(
+                height: MediaQuery.of(context).size.height * 0.28,
+                child: Image(
+                  image: AssetImage('images/device_img.png'),
+                ),
+              ),
+              Positioned(
+                right: 0,
+                top: 0,
+                child: Container(
+                  padding: EdgeInsets.fromLTRB(30, 5, 30, 5),
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(3),
+                    color: Color(0xff01CC57),
+                  ),
+                  child: Text(
+                    'Primary',
+                    style: TextStyle(
+                        fontSize: 16,
+                        color: Colors.white,
+                        fontWeight: FontWeight.w500),
+                  ),
+                ),
+              ),
+            ],
           ),
           Padding(
             padding: EdgeInsets.fromLTRB(15, 15, 20, 10),
